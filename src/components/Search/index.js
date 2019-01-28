@@ -8,17 +8,24 @@ import Suggestions from './Suggestions';
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
-
+    background: 'rgb(165, 42, 42)',
+    color: 'white',
+    fontSize: 25,
+    border: 0,
   },
   input: {
     display: 'none',
+  },
+  textField: {
+    marginLeft: 10,
+    marginBottom: 40,
   },
 });
 
 class Search extends React.Component {
   state = {
     query: '',
-    results: []
+    results: [],
   }
 
   getInfo = () => {
@@ -30,7 +37,6 @@ class Search extends React.Component {
         });
       })
       .catch((error) => {
-        // handle error
         console.log(error);
       });
   }
@@ -42,27 +48,23 @@ class Search extends React.Component {
   }
 
   handleSubmit = (event) => {
-    console.log(event);
     event.preventDefault();
     this.getInfo();
   }
 
   render() {
-  
     const { classes } = this.props;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          {/* <input type="text" placeholder="Rechercher un film" /> */}
           <Input
             id="movie-name"
             placeholder="Tapez le nom d'un film"
             className={classes.textField}
             value={this.state.query}
             onChange={this.handleChange}
-            // margin="normal"
           />
-          <button variant="contained" style={{ backgroundColor: 'Brown', color: 'White' }} className={classes.button} type="sumbit">
+          <button variant="contained" className={classes.button} type="button">
             Chercher
           </button>
         </form>

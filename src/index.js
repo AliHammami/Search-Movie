@@ -4,7 +4,7 @@
 import '@babel/polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
+
 
 /**
  * Local import
@@ -17,9 +17,7 @@ import App from 'src/components/App';
  * Code
  */
 const rootComponent = (
-  <Provider>
-    <App />
-  </Provider>
+  <App />
 );
 
 render(rootComponent, document.getElementById('root'));
