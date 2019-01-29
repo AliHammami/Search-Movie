@@ -57,7 +57,7 @@
     "mdbreact": "^4.8.3",
     "moment": "^2.22.2",
     "prop-types": "*",
-    "react": "*",
+    "react": "^16.7.0",
     "react-dom": "*",
     "react-google-maps": "^9.4.5",
     "react-notifications": "^1.4.3",
